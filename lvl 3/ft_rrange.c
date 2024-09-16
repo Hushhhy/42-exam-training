@@ -5,8 +5,12 @@ int *ft_rrange(int start, int end)
     tab = malloc(10000);
     while (start != end)
     {
-        tab[i++] = end;
-        end -= (start > end) ? -1 : 1;
+        tab[i] = end;
+        if (start > end)
+            end--;
+        else
+            end++;
+        i++;
     }
     tab[i] = end;
     return (tab);
